@@ -34,7 +34,7 @@ before_action :set_prototype, only: [:edit, :show, :destroy]
     @prototype = Prototype.find(params[:id])
     @prototype.update(prototype_params)
     if @prototype.save
-      redirect_to root_path
+      redirect_to prototype_path(@prototype.id)
     else
       render :edit
     end
